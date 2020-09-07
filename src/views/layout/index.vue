@@ -41,7 +41,7 @@ export default {
       // active: 0,
     }
   },
-  computed: {},
+  computeds: {},
   watch: {},
   created () {
 

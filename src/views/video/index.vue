@@ -7,7 +7,7 @@
 <script>
 export default {
   name: 'VideoIndex',
-  component: {},
+  components: {},
   props: {},
   data () {
     return {}

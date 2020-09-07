@@ -91,7 +91,7 @@ import { getUserInfo } from '@/api/user'
 
 export default {
   name: 'MyIndex',
-  component: {},
+  components: {},
   props: {},
   data () {
     return {

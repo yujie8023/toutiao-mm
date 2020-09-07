@@ -7,7 +7,7 @@
 <script>
 export default {
   name: 'QaIndex',
-  component: {},
+  components: {},
   props: {},
   data () {
     return {}

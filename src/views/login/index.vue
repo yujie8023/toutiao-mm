@@ -86,7 +86,7 @@ export default {
       isCountDownShow: false, //是否展示倒计时
     }
   },
-  computed: {},
+  computeds: {},
   watch: {},
   created () { },
   mounted () { },
