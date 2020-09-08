@@ -9,6 +9,7 @@
                     type="info"
                     size="small"
                     icon="search"
+                    to="/search"
                     round>搜索</van-button>
       </van-nav-bar>
       <!-- 导航栏 -->
@@ -126,7 +127,7 @@ export default {
 .home-container {
   padding-top: 174px;
   padding-bottom: 100px;
-  .van-nav-bar__title {
+  /deep/ .van-nav-bar__title {
     max-width: unset;
   }
   .search-btn {
