@@ -140,7 +140,7 @@ export default {
   }
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .my-containe {
   .header {
     height: 361px;

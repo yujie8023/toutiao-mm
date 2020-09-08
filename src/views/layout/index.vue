@@ -50,7 +50,7 @@ export default {
   methods: {}
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .layout-container {
   .layout-tabber {
     i.toutiao {

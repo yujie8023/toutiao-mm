@@ -27,8 +27,8 @@
       fit="cover"
       :src="article.cover.images[0]"
     />
-  </van-cell> </template
->>
+  </van-cell>
+</template>
 
 <script>
 export default {
@@ -50,7 +50,7 @@ export default {
   methods: {},
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .article-item {
   .title {
     font-size: 32px;
