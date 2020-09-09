@@ -3,9 +3,9 @@
     <van-list v-model="loading"
               :finished="finished"
               finished-text="没有更多了..."
-              @load="onLoad"
               :error.sync="error"
-              error-text="加载失败,请点击重试">
+              error-text="加载失败,请点击重试"
+              @load="onLoad">
       <van-cell v-for="(article,index) in list"
                 :key="index"
                 :title="article.title" />
@@ -53,9 +53,9 @@ export default {
         })
 
         // 模拟随机失败的情况
-        if (Math.random() > 0.5) {
-          JSON.parse('dsnajndjsa')
-        }
+        // if (Math.random() > 0.5) {
+        //   JSON.parse('dsnajndjsa')
+        // }
         console.log(data);
         // 2.将数据添加到数组列表中
         const { results } = data.data

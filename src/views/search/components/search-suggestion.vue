@@ -1,7 +1,11 @@
 <template>
   <div class="search-suggestion">
-    <van-cell icon="search" v-for="(text, index) in suggestions" :key="index">
-      <div slot="title" v-html="highlight(text)"></div>
+    <van-cell icon="search"
+              v-for="(text, index) in suggestions"
+              :key="index"
+              @click="$emit('search', text)">
+      <div slot="title"
+           v-html="highlight(text)"></div>
       <!-- {{}}双大括号绑定会直接输出纯文本内容 -->
       <!-- <div>{{ htmlStr }}</div> -->
       <!-- 使用v-html指令可以绑定渲染带有HTML标签的字符串 -->
@@ -13,7 +17,7 @@
 <script>
 import { getSearchSuggestion } from '@/api/search'
 // 按需加载有好处,只会把使用到的成员打包到结果中
-
+// 按需加载，减小打包体积
 import { debounce } from 'lodash'
 export default {
   name: 'SearchSuggestion',
@@ -24,7 +28,7 @@ export default {
       required: true,
     },
   },
-  data() {
+  data () {
     return {
       suggestions: [], //联想数据建议列表
       // htmlStr: 'Hello<span style="color:red">Word</span>',
@@ -43,7 +47,7 @@ export default {
       // 参数1:一个函数
       // 参数2:延迟时间,单位是毫秒
       // 返回值:防抖之后的函数
-      handler: debounce(function(value) {
+      handler: debounce(function (value) {
         // console.log(value)
         this.loadSearchSuggestions(value)
       }, 200),
@@ -55,10 +59,10 @@ export default {
       immediate: true,
     },
   },
-  created() {},
-  mounted() {},
+  created () { },
+  mounted () { },
   methods: {
-    async loadSearchSuggestions(q) {
+    async loadSearchSuggestions (q) {
       try {
         const { data } = await getSearchSuggestion(q)
         // console.log(data);
@@ -67,7 +71,7 @@ export default {
         this.$toast('数据获取失败,请稍后重试')
       }
     },
-    highlight(text) {
+    highlight (text) {
       const highlightStr = `<span class="active">${this.searchText}</span>`
       // 正则表达式 //中间的内容都会当做匹配字符来使用,而不是数据变量
       // 如果需要根据数据变量动态的创建政策表达是,则手动new RegExp
