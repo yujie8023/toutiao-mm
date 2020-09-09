@@ -2,7 +2,8 @@
   <div class="search-container">
     <!-- 顶部搜索栏 -->
     <!-- tips:在van-search外层增加from标签,且action不为空,即可 -->
-    <form action="/">
+    <form class="search-form"
+          action="/">
       <van-search v-model="searchText"
                   show-action
                   placeholder="请输入搜索关键词"
@@ -14,11 +15,13 @@
     <!-- /顶部搜索栏 -->
 
     <!-- 搜索结果 -->
-    <search-result v-if="isResultShow" />
+    <search-result v-if="isResultShow"
+                   :search-text="searchText" />
     <!-- /搜索结果 -->
 
     <!-- 联想建议 -->
-    <search-suggestion v-else-if="searchText"
+    <search-suggestion v-else-if="
+                   searchText"
                        :search-text="searchText" />
     <!--/ 联想建议 -->
 
@@ -59,6 +62,7 @@ export default {
   methods: {
     onSearch (val) {
       console.log(val)
+      this.searchText = val
       this.isResultShow = true
     },
     onCancel () {
@@ -70,8 +74,16 @@ export default {
 </script>
 <style lang="less" scoped>
 .search-container {
+  padding-top: 108px;
   .van-search__action {
     color: #fff;
+  }
+  .search-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
   }
 }
 </style>
