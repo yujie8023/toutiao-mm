@@ -1,0 +1,61 @@
+{
+  "q": "",
+  "p": false,
+  "bs": "",
+  "csor": "0",
+  "err_no": 0,
+  "errmsg": "",
+  "g": [
+    {
+      "type": "his_normal",
+      "sa": "h_1",
+      "q": "vscode文件设置json格式"
+    },
+    {
+      "type": "his_normal",
+      "sa": "h_2",
+      "q": "vscode怎么转成json格式"
+    },
+    {
+      "type": "his_normal",
+      "sa": "h_3",
+      "q": "vscode怎么转成ssjson格式"
+    },
+    {
+      "type": "his_normal",
+      "sa": "h_4",
+      "q": "vscode怎么打开setting"
+    },
+    {
+      "type": "his_normal",
+      "sa": "h_5",
+      "q": "vscode怎么设置成ssjson格式"
+    },
+    {
+      "type": "his_normal",
+      "sa": "h_6",
+      "q": "后端返回的数据怎么设置成ssjson格式"
+    },
+    {
+      "type": "his_normal",
+      "sa": "h_7",
+      "q": "怎么撤销撤销"
+    },
+    {
+      "type": "his_normal",
+      "sa": "h_8",
+      "q": "unshift"
+    },
+    {
+      "type": "his_normal",
+      "sa": "h_9",
+      "q": "vant"
+    },
+    {
+      "type": "his_normal",
+      "sa": "h_10",
+      "q": "vulodash"
+    }
+  ],
+  "queryid": "0x27b20bc4c3b856"
+}

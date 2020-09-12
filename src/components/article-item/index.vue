@@ -1,16 +1,30 @@
 <template>
-  <van-cell class="article-item">
-    <div slot="title" class="title van-multi-ellipsis--l2">
+  <!-- cell 单元格的to属性 和VueRouter中的RouterLink组件to属性的用法是一样的 -->
+  <!--  :to="'/article/'+ article.art_id" -->
+  <!-- :to="`/article/${article.art_id}`" -->
+  <van-cell class="article-item"
+            :to="{
+              //根据路由名称进行跳转
+              name:'article',
+              //传递路由动态参数
+              params:{
+                //属性名:路由路径中设计的的动态参数名称   动态参数名称可以随便起但要一致
+                articleId:article.art_id
+              }
+            }">
+    <div slot="title"
+         class="title van-multi-ellipsis--l2">
       {{ article.title }}
     </div>
     <div slot="label">
-      <div v-if="article.cover.type === 3" class="cover-wrap">
-        <div
-          class="cover-item"
-          v-for="(img, index) in article.cover.images"
-          :key="index"
-        >
-          <van-image class="cover-item-img" :src="img" fit="cover" />
+      <div v-if="article.cover.type === 3"
+           class="cover-wrap">
+        <div class="cover-item"
+             v-for="(img, index) in article.cover.images"
+             :key="index">
+          <van-image class="cover-item-img"
+                     :src="img"
+                     fit="cover" />
         </div>
       </div>
       <div class="label-info-warp">
@@ -20,13 +34,11 @@
       </div>
     </div>
 
-    <van-image
-      v-if="article.cover.type === 1"
-      slot="default"
-      class="right-cover"
-      fit="cover"
-      :src="article.cover.images[0]"
-    />
+    <van-image v-if="article.cover.type === 1"
+               slot="default"
+               class="right-cover"
+               fit="cover"
+               :src="article.cover.images[0]" />
   </van-cell>
 </template>
 
@@ -40,13 +52,13 @@ export default {
       required: true,
     },
   },
-  data() {
+  data () {
     return {}
   },
   computed: {},
   watch: {},
-  created() {},
-  mounted() {},
+  created () { },
+  mounted () { },
   methods: {},
 }
 </script>
